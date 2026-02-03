@@ -22,8 +22,16 @@ const map = L.map("map").setView([lat, lng], 13);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-let marker = L.marker([lat, lng]).addTo(map);
+}).addTo(map);var myIcon = L.icon({
+    iconUrl: '../images/icon-location.svg',
+    iconSize: [46/2, 56/2],
+    popupAnchor: [0, -10] ,/*,
+    iconAnchor: [22, 94]
+    shadowUrl: '../images/icon-location.svg',
+    shadowSize: [46, 56],
+    shadowAnchor: [22, 94] */
+});
+let marker = L.marker([lat, lng], {icon: myIcon}).addTo(map);
 marker.bindPopup("<b>Current Location</b><br>This is where you are.");//.openPopup()
 
 // Event listeners
