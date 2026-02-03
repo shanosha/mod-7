@@ -25,11 +25,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);var myIcon = L.icon({
     iconUrl: '../images/icon-location.svg',
     iconSize: [46, 56],
-    popupAnchor: [0, -10] ,/*,
-    iconAnchor: [22, 94]
-    shadowUrl: '../images/icon-location.svg',
-    shadowSize: [46, 56],
-    shadowAnchor: [22, 94] */
+    popupAnchor: [0, -56/2] ,
 });
 let marker = L.marker([lat, lng], {icon: myIcon}).addTo(map);
 marker.bindPopup("<b>Current Location</b><br>This is where you are.");//.openPopup()
