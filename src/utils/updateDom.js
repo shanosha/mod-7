@@ -4,7 +4,7 @@ const timezoneElement = document.getElementById("timezone");
 const ispElement = document.getElementById("isp");
 
 // Update the location data displayed to the user
-export function renderLocationData(data){
+function renderLocationData(data){
     
     ipElement.textContent = data.ip;
     locationElement.textContent = data.location.city;
@@ -12,3 +12,28 @@ export function renderLocationData(data){
     ispElement.textContent = data.isp;
 
 }
+
+const ipRegex = /^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/;
+
+const domainRegex = /^(?!-)(?:[a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,}$/;
+
+function isValidHost(value) {
+  return ipRegex.test(value) || domainRegex.test(value);
+}
+
+function getHostType(input) {
+  const value = input.trim();
+
+  const ipRegex =
+    /^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/;
+
+  const domainRegex =
+    /^(?!-)(?:[a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,}$/;
+
+  if (ipRegex.test(value)) return "ip";
+  if (domainRegex.test(value)) return "domain";
+
+  return "invalid";
+}
+
+export { renderLocationData, ipRegex, domainRegex, isValidHost, getHostType}
