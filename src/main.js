@@ -45,7 +45,7 @@ searchInput.addEventListener("blur",async (e)=>{
         searchInput.setCustomValidity("");
     }
 });
-form.addEventListener("submit", (e)=>{
+form.addEventListener("submit", async (e)=>{
     e.preventDefault();
 
     if (searchInput.value == "") {
@@ -56,7 +56,7 @@ form.addEventListener("submit", (e)=>{
         searchInput.setCustomValidity("");
         
         ipAddress = searchInput.value;
-        data =  fetchGeoLocation(ipAddress);
+        data = await fetchGeoLocation(ipAddress);
         console.log("New Data:", data);
 
         lat = data.location.lat;
