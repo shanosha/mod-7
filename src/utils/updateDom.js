@@ -1,6 +1,6 @@
 // Update the location data displayed to the user
 function renderLocationData(data){
-  
+
     const ipElement = document.getElementById("ip");
     const locationElement = document.getElementById("location");
     const timezoneElement = document.getElementById("timezone");
@@ -11,14 +11,6 @@ function renderLocationData(data){
     timezoneElement.textContent = data.location.timezone + " UTC";
     ispElement.textContent = data.isp;
 
-}
-
-const ipRegex = /^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/;
-
-const domainRegex = /^(?!-)(?:[a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,}$/;
-
-function isValidHost(value) {
-  return ipRegex.test(value) || domainRegex.test(value);
 }
 
 function getHostType(input) {
@@ -36,4 +28,4 @@ function getHostType(input) {
   return "invalid";
 }
 
-export { renderLocationData, ipRegex, domainRegex, isValidHost, getHostType}
+export { renderLocationData, getHostType}

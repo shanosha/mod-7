@@ -2,7 +2,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import './style/style.scss';
 import { fetchGeoLocation, getPublicIP } from "./services/geoApiService.js";
-import { renderLocationData, ipRegex, domainRegex, isValidHost, getHostType} from "./utils/updateDom.js";
+import { renderLocationData, getHostType} from "./utils/updateDom.js";
 
 const form = document.getElementById("searchForm");
 const searchInput = document.getElementById("search");
