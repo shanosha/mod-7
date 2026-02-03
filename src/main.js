@@ -62,19 +62,12 @@ form.addEventListener("submit", async (e)=>{
         map.setView([lat, lng], 13);
         // Move the marker
         marker.setLatLng([lat, lng]);
-        // Optional: update popup
-        marker.setPopupContent(`<b>New Location</b><br>${lat}, ${lng}`);
+        // Update popup
+        marker.setPopupContent(`<b>New Location</b><br>${data.location.city}, ${data.location.country}`);
         
         // Update the location data displayed to the user
         renderLocationData(data);
     }
-
-        // console.log(getHostType("8.8.8.8"));          // "ip"
-        // console.log(getHostType("google.com"));       // "domain"
-        // console.log(getHostType("sub.site.co.uk"));   // "domain"
-        // console.log(getHostType("256.1.1.1"));        // "invalid"
-        // console.log(getHostType("http://site.com"));  // "invalid"
-
         
 
 });
