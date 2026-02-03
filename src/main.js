@@ -7,6 +7,7 @@ import { renderLocationData, getHostType} from "./utils/updateDom.js";
 const form = document.getElementById("searchForm");
 const searchInput = document.getElementById("search");
 
+// Get the user's IP, and load geolocation data
 let ipAddress = await getPublicIP();
 let data = await fetchGeoLocation(ipAddress);
 console.log("User Data:",data);
@@ -51,22 +52,33 @@ form.addEventListener("submit", async (e)=>{
 
         searchInput.setCustomValidity("");
         
-        ipAddress = searchInput.value;
-        data = await fetchGeoLocation(ipAddress);
-        console.log("New Data:", data);
+        try{
 
-        lat = data.location.lat;
-        lng = data.location.lng;
+            ipAddress = searchInput.value;
+            data = await fetchGeoLocation(ipAddress,getHostType(searchInput.value)=="domain");
+            if(data===undefined){
+                throw new Error("Could not retreive data for the given IP or domain.")
+            }
+            console.log("New Data:", data);
 
-        // Move map location
-        map.setView([lat, lng], 13);
-        // Move the marker
-        marker.setLatLng([lat, lng]);
-        // Update popup
-        marker.setPopupContent(`<b>New Location</b><br>${data.location.city}, ${data.location.country}`);
-        
-        // Update the location data displayed to the user
-        renderLocationData(data);
+            lat = data.location.lat;
+            lng = data.location.lng;
+
+            // Move map location
+            map.setView([lat, lng], 13);
+            // Move the marker
+            marker.setLatLng([lat, lng]);
+            // Update popup
+            marker.setPopupContent(`<b>New Location</b><br>${data.location.city}, ${data.location.country}`);
+            
+            // Update the location data displayed to the user
+            renderLocationData(data);
+
+        }
+        catch(e){
+            alert("No data for that IP or domain could be retreived.");
+            console.error(e);
+        }
     }
         
 
