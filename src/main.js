@@ -28,7 +28,7 @@ marker.bindPopup("<b>Current Location</b><br>This is where you are.");//.openPop
 // Event listeners
 searchInput.addEventListener("blur",async (e)=>{
     if(searchInput.value == ""){
-        searchInput.setCustomValidity("");
+        searchInput.setCustomValidity("Please enter an IP address or domain");
     }
     else if (getHostType(searchInput.value) == "invalid") {
         searchInput.setCustomValidity("Invalid IP address or domain");
@@ -36,15 +36,18 @@ searchInput.addEventListener("blur",async (e)=>{
         searchInput.setCustomValidity("");
     }
 });
-form.addEventListener("submit",async (e)=>{
+form.addEventListener("submit", (e)=>{
     e.preventDefault();
 
-    if (searchInput.value != "" && getHostType(searchInput.value) != "invalid") {
+    if (searchInput.value == "") {
+        searchInput.setCustomValidity("Please enter an IP address or domain");
+    }
+    else if (searchInput.value != "" && getHostType(searchInput.value) != "invalid") {
 
         searchInput.setCustomValidity("");
         
         ipAddress = searchInput.value;
-        data = await fetchGeoLocation(ipAddress);
+        data =  fetchGeoLocation(ipAddress);
         console.log("New Data:", data);
 
         lat = data.location.lat;
