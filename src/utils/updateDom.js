@@ -11,6 +11,12 @@ function renderLocationData(data){
     timezoneElement.textContent = data.location.timezone + " UTC";
     ispElement.textContent = data.isp;
 
+    // const formContainer = document.getElementById('form');
+    // const ul = document.querySelector('ul');
+    // const halfHeight = ul.clientHeight / 2;
+    // ul.style.setProperty('bottom', `-${ul.clientHeight / 2}px`);
+    // formContainer.style.setProperty('padding-bottom', `${ul.clientHeight / 2}px`);
+
 }
 
 // Check input to see if the pattern matches a URL or domain format

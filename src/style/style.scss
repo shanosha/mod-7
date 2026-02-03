@@ -1,3 +1,7 @@
+:root {
+    --location-info-offset: -60px;
+    --location-info-padding: 80px;
+}
 html,
 body {
   margin: 0;
@@ -35,7 +39,7 @@ main > section:last-child {
   padding: 20px;
   @media (min-width: 800px) {
     position: relative;
-    padding-bottom: 100px;
+    padding-bottom: var(--location-info-padding);
   }
 
   h1 {
@@ -106,7 +110,7 @@ ul {
     padding: 1rem;
 
     position: absolute;
-    bottom: -50px;
+    bottom: var(--location-info-offset);
 
     width: 900px;
     max-width: 90%;

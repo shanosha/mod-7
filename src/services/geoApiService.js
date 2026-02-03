@@ -2,6 +2,7 @@ import { key } from "../../secret.js";
 import { ApiError, handleError } from "../utils/errorHandler.js";
 import mockData1 from "../utils/mockData1.js";
 import mockData2 from "../utils/mockData2.js";
+import mockData3 from "../utils/mockData3.js";
 
 async function getPublicIP() {
   try {
@@ -31,7 +32,7 @@ async function fetchGeoLocation(ipAddress) {
     //   throw new ApiError("API request failed", response.status);
     // }
     // const data = await response.json();
-    const data = (ip=="24.0.24.106" ? mockData1 : mockData2);
+    const data = (ip=="24.0.24.106" ? mockData1 : mockData3);
 
     return data;
   } catch (e) {
