@@ -1,10 +1,10 @@
-const ipElement = document.getElementById("ip");
-const locationElement = document.getElementById("location");
-const timezoneElement = document.getElementById("timezone");
-const ispElement = document.getElementById("isp");
-
 // Update the location data displayed to the user
 function renderLocationData(data){
+  
+    const ipElement = document.getElementById("ip");
+    const locationElement = document.getElementById("location");
+    const timezoneElement = document.getElementById("timezone");
+    const ispElement = document.getElementById("isp");
     
     ipElement.textContent = data.ip;
     locationElement.textContent = data.location.city;
