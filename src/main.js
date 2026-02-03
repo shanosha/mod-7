@@ -1,5 +1,6 @@
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import './style/style.scss';
 // import { ApiError, handleError } from "./utils/errorHandler.js";
 import { fetchGeoLocation, getPublicIP } from "./services/geoApiService.js";
 import { renderLocationData, ipRegex, domainRegex, isValidHost, getHostType} from "./utils/updateDom.js";
