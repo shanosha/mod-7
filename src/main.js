@@ -24,7 +24,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);var myIcon = L.icon({
     iconUrl: '../images/icon-location.svg',
-    iconSize: [46/2, 56/2],
+    iconSize: [46, 56],
     popupAnchor: [0, -10] ,/*,
     iconAnchor: [22, 94]
     shadowUrl: '../images/icon-location.svg',
