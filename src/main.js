@@ -1,42 +1,52 @@
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 // import { ApiError, handleError } from "./utils/errorHandler.js";
-import { fetchGeoLocation } from "./services/geoApiService.js";
+import { fetchGeoLocation, getPublicIP } from "./services/geoApiService.js";
+import { renderLocationData } from "./utils/updateDom.js";
 
-
-const ip = document.getElementById("ip");
-const location = document.getElementById("location");
-const timezone = document.getElementById("timezone");
-const isp = document.getElementById("isp");
 const form = document.getElementById("searchForm");
 const searchInput = document.getElementById("search");
 
-const data = await fetchGeoLocation();
-console.log(data);
+let ipAddress = await getPublicIP();
+let data = await fetchGeoLocation(ipAddress);
+console.log("User Data:",data);
 
 // Update the location data displayed to the user on page load
-ip.textContent = data.ip;
-location.textContent = data.location.city;
-timezone.textContent = data.location.timezone;
-isp.textContent = data.isp;
+renderLocationData(data);
 
 // Update the leaflet map location and marker
-const lat = data.location.lat;// 40.57927
-const lng = data.location.lng;// -74.41154
+let lat = data.location.lat;
+let lng = data.location.lng;
 const map = L.map("map").setView([lat, lng], 13);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-var marker = L.marker([lat, lng]).addTo(map);
+let marker = L.marker([lat, lng]).addTo(map);
 marker.bindPopup("<b>Current Location</b><br>This is where you are.");//.openPopup()
 
 // Event listeners
-form.addEventListener("submit",(e)=>{
+form.addEventListener("submit",async (e)=>{
     e.preventDefault();
-    console.log("click");
 
     if(searchInput.value != ""){
+        
+        ipAddress = searchInput.value;
+        data = await fetchGeoLocation(ipAddress);
+        console.log("New Data:", data);
+
+        lat = data.location.lat;
+        lng = data.location.lng;
+
+        // Move map location
+        map.setView([lat, lng], 13);
+        // Move the marker
+        marker.setLatLng([lat, lng]);
+        // Optional: update popup
+        marker.setPopupContent(`<b>New Location</b><br>${lat}, ${lng}`);
+        
+        // Update the location data displayed to the user
+        renderLocationData(data);
 
     }
 });
