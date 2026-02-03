@@ -1,12 +1,14 @@
-# About
+# IP Address Tracker
 
-IP Address Tracker: Build an application that tracks and displays the location of a given IP address using the IP Geolocation API by IPify and LeafletJS for map rendering.
+## About
+
+This is an application that tracks and displays the location of a given IP address using the IP Geolocation API by IPify and LeafletJS for map rendering.
 
 The repository includes:
 
 - A src/ folder to house source modules
 
-# Features
+## Features
 
 ✔ Modern JavaScript (ES Modules)
 ✔ SCSS preprocessed styles
@@ -14,48 +16,48 @@ The repository includes:
 ✔ Designed for learning and extendability
 ✔ Clean, modular codebase
 
-# Video Demo / Screenshots
+## Video Demo / Screenshots
 
 ![Desktop view](./images/desktop-design.jpg)
 ![Mobile view](./images/mobile-design.jpg)
 
-# Getting Started
+## Getting Started
 
-## Requirements
+### Requirements
 
 Node.js and npm installed
 
 A web browser for testing
 
-## Install
+### Install
 
-### Clone the repo
+#### Clone the repo
 
 git clone https://github.com/shanosha/mod-7.git
 
-### Navigate into project
+#### Navigate into project
 
 cd mod-7
 
-### Install dependencies
+#### Install dependencies
 
 npm install
 
-## Usage
+### Usage
 
-### Run in development mode
+#### Run in development mode
 
 npm run dev
 
 Open the app in your browser at the address shown by Vite.
 
-### Build for production
+#### Build for production
 
 npm run build
 
 This outputs a production bundle to dist/.
 
-# Tech Stack
+## Tech Stack
 
 JavaScript — Core language
 
