@@ -22,7 +22,7 @@ async function getPublicIP() {
 async function fetchGeoLocation(addressString,domainBoolean=false) {
   try {
 
-    const useMockData = true;
+    const useMockData = !true;
 
     const apiKey = key; // Set this value to your API key
     const address = addressString;
