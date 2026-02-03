@@ -8,7 +8,7 @@ function renderLocationData(data){
     
     ipElement.textContent = data.ip;
     locationElement.textContent = data.location.city;
-    timezoneElement.textContent = data.location.timezone;
+    timezoneElement.textContent = data.location.timezone + " UTC";
     ispElement.textContent = data.isp;
 
 }
