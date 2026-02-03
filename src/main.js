@@ -21,13 +21,14 @@ const map = L.map("map").setView([lat, lng], 13);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);var myIcon = L.icon({
+}).addTo(map);
+const myIcon = L.icon({
     iconUrl: '../images/icon-location.svg',
     iconSize: [46, 56],
     popupAnchor: [0, -56/2] ,
 });
-let marker = L.marker([lat, lng], {icon: myIcon}).addTo(map);
-marker.bindPopup("<b>Current Location</b><br>This is where you are.");//.openPopup()
+const marker = L.marker([lat, lng], {icon: myIcon}).addTo(map);
+marker.bindPopup("<b>Current Location</b><br>This is where you are.");
 
 // Event listeners
 searchInput.addEventListener("blur",async (e)=>{
