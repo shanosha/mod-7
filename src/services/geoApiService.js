@@ -4,7 +4,7 @@ import mockData1 from "../utils/mockData1.js";
 import mockData2 from "../utils/mockData2.js";
 import mockData3 from "../utils/mockData3.js";
 
-
+// Get the user's current IP address using an API
 async function getPublicIP() {
   try {
     const response = await fetch("https://api.ipify.org?format=json");
@@ -19,6 +19,7 @@ async function getPublicIP() {
   }
 }
 
+// Get geolocation data via an API request
 async function fetchGeoLocation(addressString,domainBoolean=false) {
   try {
 
