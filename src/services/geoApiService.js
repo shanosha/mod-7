@@ -32,7 +32,7 @@ async function fetchGeoLocation(ipAddress) {
     //   throw new ApiError("API request failed", response.status);
     // }
     // const data = await response.json();
-    const data = (ip=="24.0.24.106" ? mockData1 : mockData3);
+    const data = (ip=="24.0.24.106" ? mockData1 : mockData2);
 
     return data;
   } catch (e) {
