@@ -16,9 +16,18 @@ The repository includes:
 ✔ Designed for learning and extendability
 ✔ Clean, modular codebase
 
-## Video Demo / Screenshots
+## Video Demo / Screenshots / Depolyments
 
+Deployed on GitHub Pages
+https://shanosha.github.io/mod-7/
+
+Video Demo
+https://www.loom.com/share/fe8087d090cf4606b05cb4a5ee3add08
+
+Desktop Screenshot
 ![Desktop view](./images/desktop-design.jpg)
+
+Mobile Screenshot
 ![Mobile view](./images/mobile-design.jpg)
 
 ## Getting Started
