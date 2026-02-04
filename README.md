@@ -40,7 +40,7 @@ https://www.loom.com/share/fe8087d090cf4606b05cb4a5ee3add08
 
 - Node.js and npm installed
 
-- A IP Geolocation API key from IPify https://geo.ipify.org/
+- An IP Geolocation API key from IPify https://geo.ipify.org/
 
 - A web browser for testing
 
