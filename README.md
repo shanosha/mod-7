@@ -38,35 +38,57 @@ https://www.loom.com/share/fe8087d090cf4606b05cb4a5ee3add08
 
 ### Requirements
 
-Node.js and npm installed
+- Node.js and npm installed
 
-A web browser for testing
+- A IP Geolocation API key from IPify https://geo.ipify.org/
+
+- A web browser for testing
 
 ### Install
 
 #### Clone the repo
 
+```
 git clone https://github.com/shanosha/mod-7.git
+```
 
 #### Navigate into project
 
+```
 cd mod-7
+```
 
 #### Install dependencies
 
+```
 npm install
+```
 
 ### Usage
 
+#### Add your API key
+
+- Create a file in the root directory called "secret.js".
+
+- In the file, add the following line of code with your API key:
+
+```javascript
+export const key = "API_KEY_HERE";
+```
+
 #### Run in development mode
 
+```
 npm run dev
+```
 
 Open the app in your browser at the address shown by Vite.
 
 #### Build for production
 
+```
 npm run build
+```
 
 This outputs a production bundle to dist/.
 
