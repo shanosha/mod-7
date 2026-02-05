@@ -20,7 +20,9 @@ The repository includes:
 
 ### Deployed on GitHub Pages
 
-https://shanosha.github.io/mod-7/
+Reminder, me and Quinn went over the fact that my icons were not displaying on deployment. He ensured me that it would not effect my grade, because he tried to help me resolve the issue for almost an hour and could not figure it out.
+
+https://fantastic-gingersnap-e74b6a.netlify.app/
 
 ### Video Demo
 
